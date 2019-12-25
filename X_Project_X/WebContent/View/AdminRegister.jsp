@@ -65,7 +65,7 @@
 	<footer>
 	<p>
 		<s:text name="global.Footerone"></s:text>
-		<a href="https://github.com">github </a>
+		<a href="https://github.com/prointernal/Nesoft_Administration_System/tree/master/X_Project_X">github </a>
 		<s:text name="global.Footertwo"></s:text>
 	</p>
 	</footer>
