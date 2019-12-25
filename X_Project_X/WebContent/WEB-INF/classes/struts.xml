@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.custom.i18n.resources" value="global"></constant>
+	<constant name="struts.custom.i18n.encoding" value="UTF-8"></constant>
+	<constant name="struts.devMode" value="true"></constant>
+
+	<package name="default" extends="hibernate-default">
+
+		<action name="addTeacher" method="saveTeacher"
+			class="Controller.TeacherAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">listTeachers</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="input">View/AddTeacher.jsp</result>
+		</action>
+
+		<action name="search" method="searchName"
+			class="Controller.TeacherAction">
+			<result name="success"> /View/Welcome.jsp</result>
+		</action>
+
+
+		<action name="listTeachers" method="listTeachers"
+			class="Controller.TeacherAction">
+			<result name="success"> /View/Welcome.jsp</result>
+		</action>
+
+		<action name="deleteTeacher" method="deleteTeacher"
+			class="Controller.TeacherAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">listTeachers</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<action name="updateTeacher" method="updateTeacher"
+			class="Controller.TeacherAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">listTeachers</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<action name="editTeacher" method="editTeacher"
+			class="Controller.TeacherAction">
+			<result name="success">/View/UpdateTeacher.jsp</result>
+		</action>
+
+		<action name="home">
+			<result name="success">/View/AdminLogin.jsp</result>
+		</action>
+
+		<action name="register" method="saveAdmin"
+			class="Controller.RegisterAction">
+			<result name="success">/View/RegisterSuccess.jsp</result>
+			<result name="input">/AdminRegister.jsp</result>
+		</action>
+
+		<action name="login" class="Controller.LoginAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName"> listTeachers</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="error">/View/LoginError.jsp</result>
+			<result name="input">/View/AdminLogin.jsp</result>
+		</action>
+
+		<action name="locale1" class="Controller.LocaleAction"
+			method="execute">
+			<result name="success">/View/AdminLogin.jsp</result>
+		</action>
+
+		<action name="locale" class="Controller.LocaleAction"
+			method="execute">
+			<result name="success">/View/AdminRegister.jsp</result>
+		</action>
+
+		<action name="Addteacher" class="Controller.LocaleAction"
+			method="execute">
+			<result name="success">/View/AddTeacher.jsp</result>
+		</action>
+
+		<action name="Updateteacher" class="Controller.LocaleAction"
+			method="execute">
+			<result name="success">/View/UpdateTeacher.jsp</result>
+		</action>
+
+		<action name="sss" class="Controller.LocaleAction"
+			method="execute">
+			<result name="success">/View/sss.jsp</result>
+		</action>
+
+		<action name="Welcome" class="Controller.LocaleAction"
+			method="execute">
+			<result name="success">/View/Welcome.jsp</result>
+		</action>
+	</package>
+</struts>
